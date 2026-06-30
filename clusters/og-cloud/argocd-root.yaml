@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/AverageGoldenRetrieverEnjoyer/cloud-manifests.git
     targetRevision: main
-    path: clusters/og-cloud/root
+    path: clusters/og-cloud/apps
 
   destination:
     server: https://kubernetes.default.svc
