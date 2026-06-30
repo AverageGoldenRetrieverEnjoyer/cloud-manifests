@@ -17,8 +17,6 @@ spec:
         - values-dev.yaml
   sources: []
   project: default
-  syncOptions:
-    - CreateNamespace=true
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
