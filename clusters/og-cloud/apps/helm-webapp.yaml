@@ -7,8 +7,8 @@ spec:
     namespace: webapp
     server: https://kubernetes.default.svc
   source:
-    path: helm-webapp
-    repoURL: https://github.com/devopsjourney1/argo-examples
+    path: apps/helm-webapp
+    repoURL: https://github.com/AverageGoldenRetrieverEnjoyer/cloud-manifests.git
     targetRevision: HEAD
     valueFiles:
       - values-prod.yaml
