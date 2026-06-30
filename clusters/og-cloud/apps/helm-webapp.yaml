@@ -1,14 +1,24 @@
-project: default
-source:
-  repoURL: https://github.com/devopsjourney1/argo-examples
-  path: helm-webapp
-  targetRevision: HEAD
-  helm:
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: Webapp2
+spec:
+  destination:
+    namespace: webapp
+    server: https://kubernetes.default.svc
+  source:
+    path: helm-webapp
+    repoURL: https://github.com/devopsjourney1/argo-examples
+    targetRevision: HEAD
     valueFiles:
       - values-prod.yaml
-destination:
-  server: https://kubernetes.default.svc
-  namespace: webapp
-syncPolicy:
+    helm:
+      valueFiles:
+        - values-dev.yaml
+  sources: []
+  project: default
   syncOptions:
     - CreateNamespace=true
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
